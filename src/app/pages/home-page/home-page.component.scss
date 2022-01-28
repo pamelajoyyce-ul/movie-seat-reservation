@@ -2,5 +2,13 @@
    // border: 2px solid red;
    padding: 50px;
    display: flex;
-   justify-content: space-around;
+   // justify-content: space-around;
+   flex-wrap: wrap;
+//   padding-left: 0;
+}
+
+app-movie-preview{
+   // border: 2px solid red; 
+   padding: 10px;
+   flex: 0 0 33.333333%;
 }
