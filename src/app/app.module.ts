@@ -9,12 +9,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatCardModule} from '@angular/material/card';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    MoviePreviewComponent
+    MoviePreviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +22,8 @@ import {MatCardModule} from '@angular/material/card';
     NgbModule,
     NoopAnimationsModule,
     MatSliderModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

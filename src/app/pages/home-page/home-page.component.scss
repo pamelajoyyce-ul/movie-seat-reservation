@@ -12,3 +12,8 @@ app-movie-preview{
    padding: 10px;
    flex: 0 0 33.333333%;
 }
+
+mat-toolbar{
+   display: flex;
+   justify-content: space-between;
+}
