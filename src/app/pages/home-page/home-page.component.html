@@ -1,14 +1,14 @@
 <div class="header">
     <mat-toolbar>
         <span>Movie Cinema</span>
-        <button>Add New Movie</button>
+        <button mat-raised-button color="primary" (click)="openModal()">Add New Movie</button>
     </mat-toolbar>
 </div>
 
 <div class="movie-previews">
+    <!-- <app-movie-preview> </app-movie-preview>
     <app-movie-preview> </app-movie-preview>
-    <app-movie-preview> </app-movie-preview>
-    <app-movie-preview> </app-movie-preview>
-
+    <app-movie-preview> </app-movie-preview> -->
+    <app-new-movie-modal></app-new-movie-modal>
 
 </div>
