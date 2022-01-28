@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {NewMovieModalComponent} from 'src/app/components/new-movie-modal/new-movie-modal.component';
+import { NewMovieModalComponent } from 'src/app/components/new-movie-modal/new-movie-modal.component';
 
 @Component({
   selector: 'app-home-page',
@@ -16,8 +16,10 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openModal(){
-    const modalRef = this.modalService.open(NewMovieModalComponent);
+  openModal() {
+    this.modalService.open(NewMovieModalComponent, {
+      backdrop: 'static'
+    });
 
   }
 

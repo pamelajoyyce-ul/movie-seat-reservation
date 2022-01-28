@@ -12,7 +12,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { NewMovieModalComponent } from './components/new-movie-modal/new-movie-modal.component';
 import {MatChipsModule} from '@angular/material/chips';
-import {MatIconModule} from '@angular/material/icon';@NgModule({
+import {MatIconModule} from '@angular/material/icon';import { ReactiveFormsModule } from '@angular/forms';
+@NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
@@ -28,7 +29,8 @@ import {MatIconModule} from '@angular/material/icon';@NgModule({
     MatToolbarModule,
     MatButtonModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

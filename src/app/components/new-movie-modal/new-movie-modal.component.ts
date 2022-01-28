@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
-
+import { FormBuilder, Validators } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-new-movie-modal',
   templateUrl: './new-movie-modal.component.html',
@@ -40,9 +41,19 @@ export class NewMovieModalComponent implements OnInit {
       time: "8:00PM-10:00PM",
       value: '20'
     }
-  ]
+  ];
 
-  constructor() { }
+  addMovieForm = this.formBuilder.group({
+    title: [null, Validators.required],
+    poster: [null, Validators.required],
+    timeSlots: [[], Validators.required],
+    seats: [null, Validators.compose([Validators.required, Validators.min(18)])]
+  })
+
+  constructor(
+    private formBuilder: FormBuilder,
+    public activeModal: NgbActiveModal
+  ) { }
 
   ngOnInit(): void {
   }
@@ -54,6 +65,10 @@ export class NewMovieModalComponent implements OnInit {
 
   changeSelected() {
     console.log('event');
+  }
+
+  onSubmit(){
+    console.log('Submit Clicked')
   }
 
 }

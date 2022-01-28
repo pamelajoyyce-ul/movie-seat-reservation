@@ -4,33 +4,35 @@
 
     </mat-toolbar>
     <!-- Form -->
-    <div class="container">
-        <div class="form-group">
-            <label>Movie Title</label>
-            <input class="form-control" type="text" placeholder="">
-        </div>
-        <div class="form-group">
-            <label>Movie Poster</label>
-            <input class="form-control" type="file">
-        </div>
-        <div class="form-group">
-            <label>Time Slots</label>
-            <mat-chip-list aria-label="Time Slots" selectable multiple>
-                <mat-chip #c="matChip" *ngFor="let chip of timeSlots" [value]="chip.value" (click)="toggleSelection(c)">
-                    {{chip.time}}</mat-chip>
-            </mat-chip-list>
-        </div>
-        <div class="form-group">
-            <label>Seats</label>
-            <input class="form-control" type="input">
-        </div>
-        <div class="form-group">
-            <div class="text-right">
-                <button mat-raised-button>Cancel</button>
-                <button mat-raised-button color="primary">Save</button>
+    <form [formGroup]="addMovieForm" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div class="form-group">
+                <label>Movie Title</label>
+                <input class="form-control" type="text" placeholder="" formControlName="title">
+            </div>
+            <div class="form-group">
+                <label>Movie Poster</label>
+                <input class="form-control" type="file" formControlName="poster">
+            </div>
+            <div class="form-group">
+                <label>Time Slots</label>
+                <mat-chip-list aria-label="Time Slots" selectable multiple formControlName="timeSlots">
+                    <mat-chip #c="matChip" *ngFor="let chip of timeSlots" [value]="chip.value"
+                        (click)="toggleSelection(c)">
+                        {{chip.time}}</mat-chip>
+                </mat-chip-list>
+            </div>
+            <div class="form-group">
+                <label>Seats</label>
+                <input class="form-control" type="input" formControlName="seats">
+            </div>
+            <div class="form-group">
+                <div class="text-right">
+                    <button mat-raised-button (click)="activeModal.close('Close click')">Cancel</button>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!addMovieForm.valid">Save</button>
+                </div>
             </div>
         </div>
-
-    </div>
+    </form>
     <!-- End of Form -->
 </div>
