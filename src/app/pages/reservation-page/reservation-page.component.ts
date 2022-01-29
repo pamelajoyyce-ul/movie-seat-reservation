@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CancellationModalComponent } from 'src/app/components/cancellation-modal/cancellation-modal.component';
 import { HistoryModalComponent } from 'src/app/components/history-modal/history-modal.component';
 
 @Component({
@@ -16,9 +17,12 @@ export class ReservationPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openModal() {
-    this.modalService.open(HistoryModalComponent);
+  openHistoryModal() {
+     this.modalService.open(HistoryModalComponent)
+  }
 
+  openCancelModal(){
+    this.modalService.open(CancellationModalComponent)
   }
 
 }

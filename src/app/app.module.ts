@@ -17,6 +17,7 @@ import { ReservationPageComponent } from './pages/reservation-page/reservation-p
 import {MatSelectModule} from '@angular/material/select';
 import { SeatMapComponent } from './components/seat-map/seat-map.component';
 import { HistoryModalComponent } from './components/history-modal/history-modal.component';
+import { CancellationModalComponent } from './components/cancellation-modal/cancellation-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { HistoryModalComponent } from './components/history-modal/history-modal.
     ReservationPageComponent,
     SeatMapComponent,
     HistoryModalComponent,
+    CancellationModalComponent,
   ],
   imports: [
     BrowserModule,

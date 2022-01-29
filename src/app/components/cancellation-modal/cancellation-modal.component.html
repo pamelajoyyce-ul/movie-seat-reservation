@@ -1,0 +1,25 @@
+<div>
+    <mat-toolbar>
+        <span>Cancel Reservation</span>
+    </mat-toolbar>
+    <!-- Form -->
+    <form [formGroup]="cancellationForm" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div class="form-group">
+                <label>Customer Name</label>
+                <input class="form-control" type="text" placeholder="" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label>Seats</label>
+                <input class="form-control" type="input" formControlName="seats">
+            </div>
+            <div class="form-group">
+                <div class="text-right">
+                    <button mat-raised-button color="primary" type="submit"
+                        [disabled]="!cancellationForm.valid">Delete</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- End of Form -->
+</div>
