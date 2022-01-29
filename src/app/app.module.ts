@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';import { ReactiveFormsModul
 import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
 import {MatSelectModule} from '@angular/material/select';
 import { SeatMapComponent } from './components/seat-map/seat-map.component';
+import { HistoryModalComponent } from './components/history-modal/history-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { SeatMapComponent } from './components/seat-map/seat-map.component';
     NewMovieModalComponent,
     ReservationPageComponent,
     SeatMapComponent,
+    HistoryModalComponent,
   ],
   imports: [
     BrowserModule,
