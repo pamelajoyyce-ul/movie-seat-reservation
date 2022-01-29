@@ -1,0 +1,89 @@
+<div class="header">
+    <mat-toolbar>
+        <div class="container">
+            <div class="row">
+                <div class="col mx">
+                    <span>Movie Title</span>
+                </div>
+                <div class="col">
+                    <mat-label>Select Time Slot </mat-label>
+                    <mat-select>
+                        <mat-option value="option1">Option 1</mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+        </div>
+    </mat-toolbar>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <mat-chip>1</mat-chip>
+            <label for=""></label> Available
+            <mat-chip>1</mat-chip>
+            <label for=""></label> Unavailable
+            <mat-chip>1</mat-chip>
+            <label for=""></label> Selected
+        </div>
+        <div class="col text-right">
+            <button class="btn mr-1" mat-raised-button color="primary">History</button>
+            <button class="btn mr-1" mat-raised-button color="primary">Reset All</button>
+            <button class="btn" mat-raised-button color="primary">Cancel Reservation</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col">
+            <app-seat-map></app-seat-map>
+        </div>
+    </div>
+</div>
+<form action="">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table style="width:100%">
+                    <tr>
+                        <th>Seats Selected</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>A1</td>
+                        <td>$10</td>
+                    </tr>
+                    <tr>
+                        <td>A1</td>
+                        <td>$10</td>
+                    </tr>
+                    <tr>
+                        <td>A1</td>
+                        <td>$10</td>
+                    </tr>
+                    <tr>
+                        <td>A1</td>
+                        <td>$10</td>
+                    </tr>
+                    <tr>
+                        <th>Total Price</th>
+                        <th>$10</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="col form-group">
+                <!-- Disable if no selected seats -->
+                <div class="p-1">
+                    <label for="">Customer Name</label>
+                    <input class="form-control" type="text">
+                </div>
+                <div class="p-1 text-right">
+                    <button class="btn" mat-raised-button color="primary">Buy Seats</button>
+                    <button class="btn" mat-raised-button color="primary">Unselect Seats</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -13,12 +13,17 @@ import {MatButtonModule} from '@angular/material/button';
 import { NewMovieModalComponent } from './components/new-movie-modal/new-movie-modal.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';import { ReactiveFormsModule } from '@angular/forms';
+import { ReservationPageComponent } from './pages/reservation-page/reservation-page.component';
+import {MatSelectModule} from '@angular/material/select';
+import { SeatMapComponent } from './components/seat-map/seat-map.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     MoviePreviewComponent,
     NewMovieModalComponent,
+    ReservationPageComponent,
+    SeatMapComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import {MatIconModule} from '@angular/material/icon';import { ReactiveFormsModul
     MatButtonModule,
     MatChipsModule,
     MatIconModule,
+    MatSelectModule,
     ReactiveFormsModule
   ],
   providers: [],
