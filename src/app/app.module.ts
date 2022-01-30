@@ -18,6 +18,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { SeatMapComponent } from './components/seat-map/seat-map.component';
 import { HistoryModalComponent } from './components/history-modal/history-modal.component';
 import { CancellationModalComponent } from './components/cancellation-modal/cancellation-modal.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { CancellationModalComponent } from './components/cancellation-modal/canc
     SeatMapComponent,
     HistoryModalComponent,
     CancellationModalComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
