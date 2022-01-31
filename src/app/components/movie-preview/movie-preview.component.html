@@ -1,7 +1,7 @@
 <mat-card class="preview-card">
     <mat-card-header>
         <div class="preview-header-image"></div>
-        <mat-card-title>Movie Title</mat-card-title>
+        <mat-card-title>{{data.title}}</mat-card-title>
     </mat-card-header>
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     <p>change image</p>
@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <td>6:00AM-8:00AM</td>
-                <td>32</td>
+                <td>{{data.total_seats}}</td>
             </tr>
         </table>
     </mat-card-content>

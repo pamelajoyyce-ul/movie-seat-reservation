@@ -6,9 +6,7 @@
 </div>
 
 <div class="movie-previews">
-    <app-movie-preview> </app-movie-preview>
-    <app-movie-preview> </app-movie-preview>
-    <app-movie-preview> </app-movie-preview>
-    <!-- <app-new-movie-modal></app-new-movie-modal> -->
-
+    <ng-container *ngFor="let movie of movies">
+        <app-movie-preview [data]="movie"> </app-movie-preview>
+    </ng-container>
 </div>

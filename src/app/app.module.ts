@@ -19,6 +19,7 @@ import { SeatMapComponent } from './components/seat-map/seat-map.component';
 import { HistoryModalComponent } from './components/history-modal/history-modal.component';
 import { CancellationModalComponent } from './components/cancellation-modal/cancellation-modal.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     MatChipsModule,
     MatIconModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
