@@ -7,8 +7,6 @@
 
 <div class="movie-previews">
     <ng-container *ngFor="let movie of movies">
-        <!-- <a [routerLink]="'/reservation-page/' + movie.movie_id"> -->
             <app-movie-preview [data]="movie"> </app-movie-preview>
-        <!-- </a> -->
     </ng-container>
 </div>

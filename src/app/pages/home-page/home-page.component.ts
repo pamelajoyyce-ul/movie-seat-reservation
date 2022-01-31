@@ -14,7 +14,7 @@ export class HomePageComponent implements OnInit {
     private modalService: NgbModal,
     private movieService: ServerService
   ) {
-    this.getEvents();
+    this.getMovies();
   }
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  async getEvents() {
+  async getMovies() {
     try {
       const res: any = await this.movieService.getMovies();
       this.movies = res;
@@ -35,6 +35,12 @@ export class HomePageComponent implements OnInit {
     } catch (err) {
       console.log('Error', err);
     }
+  }
+
+  addItem(newItem: any) {
+    // this.movies.push(newItem);
+    console.log('new Item', newItem);
+    this.getMovies();
   }
 
 }

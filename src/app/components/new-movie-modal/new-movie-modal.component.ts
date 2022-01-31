@@ -78,10 +78,10 @@ export class NewMovieModalComponent implements OnInit {
         total_seats: this.addMovieForm.controls['total_seats'].value
       };
       console.log('details', movie)
+      const test = 'test';
       const res: any = await this.movieService.createMovies(movie);
-      
       this.activeModal.close('Close click');
-      // console.log('Movie Added!', res);
+      window.location.reload();
     } catch (err) {
       console.log('Failed to post', err);
     }
