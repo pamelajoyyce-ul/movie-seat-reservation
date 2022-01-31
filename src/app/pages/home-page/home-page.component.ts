@@ -12,11 +12,12 @@ export class HomePageComponent implements OnInit {
   movies: any[] = [];
   constructor(
     private modalService: NgbModal,
-    private server: ServerService
-  ) { }
+    private movieService: ServerService
+  ) {
+    this.getEvents();
+  }
 
   ngOnInit(): void {
-    this.getEvents();
   }
 
   openModal() {
@@ -26,28 +27,14 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  private getEvents() {
-    this.server.getMovies().then((response: any) => {
-      console.log('Response', response);
-      this.movies = response.map((ev: any) => {
-        ev.body = ev.description;
-        ev.header = ev.name;
-        ev.icon = 'fa-clock-o';
-        return ev;
-      });
-    });
+  async getEvents() {
+    try {
+      const res: any = await this.movieService.getMovies();
+      this.movies = res;
+      console.log('res', res)
+    } catch (err) {
+      console.log('Error', err);
+    }
   }
-
-  // createEvent() {
-  //   const newEvent = {
-  //     owner: "Pamela",
-  //     name: "Pamela",
-  //     description: "test",
-  //     date: new Date,
-  //   };
-  //   this.server.createEvent(newEvent).then(() => {
-  //     this.getEvents();
-  //   });
-  // }
 
 }

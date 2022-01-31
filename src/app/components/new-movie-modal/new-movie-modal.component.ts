@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatChip } from '@angular/material/chips';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ServerService } from 'src/app/services/server/server.service';
 @Component({
   selector: 'app-new-movie-modal',
   templateUrl: './new-movie-modal.component.html',
@@ -46,13 +47,14 @@ export class NewMovieModalComponent implements OnInit {
   addMovieForm = this.formBuilder.group({
     title: [null, Validators.required],
     poster: [null, Validators.required],
-    timeSlots: [[], Validators.required],
-    seats: [null, Validators.compose([Validators.required, Validators.min(18)])]
+    time_slots: [],
+    total_seats: [null, Validators.compose([Validators.required, Validators.min(18)])]
   })
 
   constructor(
     private formBuilder: FormBuilder,
-    public activeModal: NgbActiveModal
+    public activeModal: NgbActiveModal,
+    private movieService: ServerService,
   ) { }
 
   ngOnInit(): void {
@@ -67,8 +69,22 @@ export class NewMovieModalComponent implements OnInit {
     console.log('event');
   }
 
-  onSubmit(){
-    console.log('Submit Clicked')
+  async onSubmit() {
+    try {
+      const movie = {
+        title: this.addMovieForm.controls['title'].value,
+        // poster: null,
+        // time_slots: null,
+        total_seats: this.addMovieForm.controls['total_seats'].value
+      };
+      console.log('details', movie)
+      const res: any = await this.movieService.createMovies(movie);
+      
+      this.activeModal.close('Close click');
+      // console.log('Movie Added!', res);
+    } catch (err) {
+      console.log('Failed to post', err);
+    }
   }
 
 }
