@@ -1,9 +1,11 @@
 <mat-card class="preview-card">
+    <a [routerLink]="'/reservation-page/' + data.movie_id">
     <mat-card-header>
         <div class="preview-header-image"></div>
         <mat-card-title>{{data.title}}</mat-card-title>
     </mat-card-header>
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    </a>
     <p>change image</p>
     <mat-card-content>
         <table style="width:100%">
