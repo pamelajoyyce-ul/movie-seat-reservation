@@ -1,8 +1,10 @@
 <div class="container  d-flex justify-content-center">
     <div class="row">
-        <div class="col-3" *ngFor="let seat of seatSlots; let i = index">
-            <button class="btn border" (click)="seat.selected =!seat.selected" [disabled]="seat.status==='unavailable'"
-                [class.myClass]="seat.selected">{{seat.seat_no}}</button>
+        <div class="col-3" *ngFor="let in of counter(5); let i = index">
+            <button class="btn border">{{i}}</button>
+            <!-- <button class="btn border" (click)="seat.selected =!seat.selected" [disabled]="seat.status==='unavailable'"
+                [class.myClass]="seat.selected">{{seat.seat_no}}</button> -->
         </div>
+        <!-- <p *ngFor="let in of counter(5) ;let i = index">{{i}}</p> -->
     </div>
 </div>

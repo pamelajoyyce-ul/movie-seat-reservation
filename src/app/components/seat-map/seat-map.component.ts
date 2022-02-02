@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerService } from 'src/app/services/server/server.service';
 
 @Component({
   selector: 'app-seat-map',
@@ -6,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seat-map.component.scss']
 })
 export class SeatMapComponent implements OnInit {
-  totalItems = 6;
-  colsPerRow = 2;
   seatSlots = [
     {
       id: 1,
@@ -15,27 +14,32 @@ export class SeatMapComponent implements OnInit {
       status: 'available',
       selected: false
     },
-    {id: 2,
+    {
+      id: 2,
       seat_no: 2,
       status: 'available',
       selected: false
     },
-    {id: 3,
+    {
+      id: 3,
       seat_no: 3,
       status: 'available',
       selected: false
     },
-    {id: 4,
+    {
+      id: 4,
       seat_no: 4,
       status: 'unavailable',
       selected: false
     },
-    {id: 5,
+    {
+      id: 5,
       seat_no: 5,
       status: 'available',
       selected: false
     },
-    {id: 6,
+    {
+      id: 6,
       seat_no: 6,
       status: 'unavailable',
       selected: false
@@ -45,7 +49,7 @@ export class SeatMapComponent implements OnInit {
       seat_no: 7,
       status: 'available',
       selected: false
-    },{
+    }, {
       id: 7,
       seat_no: 7,
       status: 'available',
@@ -53,9 +57,13 @@ export class SeatMapComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(private movieService: ServerService) { }
 
   ngOnInit(): void {
+  }
+
+  counter(i: number) {
+    return new Array(i);
   }
 
 }
